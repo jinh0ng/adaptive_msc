@@ -1,0 +1,135 @@
+idx,subject,question,gold,predicted,correct
+1,abstract_algebra,"Q에 대해 주어진 확대체 Q(sqrt(2), sqrt(3), sqrt(18))의 차수를 구하십시오.",B,ANSWER: B,True
+2,abstract_algebra,"S_5에서 p = (1, 2, 5, 4)(2, 3)이라고 하면 S_5에서 <p>의 지수를 구하십시오.",C,ANSWER: A,False
+3,abstract_algebra,주어진 유한체에서 계수가 있는 다항식의 모든 영점을 찾으십시오. Z_5에서 x^5 + 3x^3 + x^2 + 2x입니다.,D,"Reasoning step 1: Identify the field and the task.
+The problem asks for the roots of the polynomial $P(x) = x^5 + 3x^3 + x^2 + 2x$ in the finite field $\mathbb{Z}_5 = \{0, 1, 2, 3, 4\}$. A root $a$ satisfies $P(a) \equiv 0 \pmod{5}$.
+
+Reasoning step 2: Test potential roots systematically.
+We test each element in $\mathbb{Z}_5$:
+
+1. **Test $x=0$:**
+   $P(0) = 0^5 + 3(0)^3 + 0^2 + 2(0) = 0$.
+   So, $x=0$ is a root.
+
+2. **Test $x=1$:**
+   $P(1) = 1^5 + 3(1)^3 + 1^2 + 2(1) = 1 + 3 + 1 + 2 = 7$.
+   $7 \equiv 2 \pmod{5}$.
+   So, $x=1$ is not a root.
+
+3. **Test $x=2$:**
+   $P(2) = 2^5 + 3(2^3) + 2^2 + 2(2) \pmod{5}$
+   $2^5 = 32 \equiv 2 \pmod{5}$
+   $2^3 = 8 \equiv 3 \pmod{5}$
+   $P(2) \equiv 2 + 3(3) + 4 + 4 \pmod{5}$
+   $P(2) \equiv 2 + 9 + 8 \pmod{5}$
+   $P(2) \equiv 2 + 4 + 3 \pmod{5}$ (Since $9 \equiv 4$ and $8 \equiv 3$)
+   $P(2) \equiv 9 \equiv 4 \pmod{5}$.
+   So, $x=2$ is not a root. (Note: The successful steps calculated $P(2) \equiv 14 \equiv 4 \pmod{5}$, which is correct.)
+
+4. **Test $x=3$:**
+   $P(3) = 3^5 + 3(3^3) + 3^2 + 2(3) \pmod{5}$
+   $3^2 = 9 \equiv 4 \equiv -1 \pmod{5}$
+   $3^3 \equiv 3 \cdot (-1) = -3 \equiv 2 \pmod{5}$
+   $3^5 = 3^2 \cdot 3^3 \equiv (-1) \cdot 2 = -2 \equiv 3 \pmod{5}$
+   $P(3) \equiv 3 + 3(2) + 4 + 6 \pmod{5}$
+   $P(3) \equiv 3 + 6 + 4 + 1 \pmod{5}$
+   $P(3) \equiv 3 + 1 + 4 + 1 \pmod{5}$
+   $P(3) \equiv 9 \equiv 4 \pmod{5}$.
+   So, $x=3$ is not a root.
+
+5. **Test $x=4$:**
+   $x=4 \equiv -1 \pmod{5}$.
+   $P(4) = (-1)^5 + 3(-1)^3 + (-1)^2 + 2(-1) \pmod{5}$
+   $P(4) = -1 + 3(-1) + 1 - 2 \pmod{5}$
+   $P(4) = -1 - 3 + 1 - 2 \pmod{5}$
+   $P(4) = -5 \pmod{5}$
+   $P(4) \equiv 0 \pmod{5}$.
+   So, $x=4$ is a root.
+
+The roots are $x=0$ and $x=4$.
+
+Reasoning step 3: Compare results with options.
+The roots are $\{0, 4\}$.
+A) 0
+B) 1
+C) 0, 1
+D) 0, 4
+
+The correct option is D.
+
+ANSWER: D",True
+4,abstract_algebra,명제 1 | 비가환군의 잉여군은 비가환적이다. 명제 2 | K가 H의 정규부분군이고 H가 G의 정규부분군이면 K는 G의 정규부분군이다.,B,"Successful reasoning steps:
+Reasoning step 1: 명제 1 분석:** 비가환군의 잉여군은 비가환적이다.**
+이 명제가 참인지 거짓인지를 판단해야 합니다. '잉여군(quotient group)'을 $G/N$으로 해석하고, $G$가 비가환군일 때 모든 정규부분군 $N$에 대해 $G/N$이 비가환군인지 확인합니다.
+반례: $G = S_3$ (비가환군). $H = A_3$ (정규부분군).
+잉여군 $G/H = S_3/A_3 \cong C_2$ (순환군, 가환군).
+따라서 명제 1은 **거짓**입니다.
+
+Reasoning step 2: 명제 2 분석:** $K$가 $H$의 정규부분군이고 $H$가 $G$의 정규부분군이면 $K$는 $G$의 정규부분군이다.**
+이는 정규부분군의 연쇄성(Transitivity of Normal Subgroups)에 관한 명제입니다.
+정의에 따르면, $K \triangleleft H$이고 $H \triangleleft G$일 때, $K$가 $G$의 정규부분군이 되려면 모든 $g \in G$에 대해 $gKg^{-1} = K$여야 합니다.
+$H \triangleleft G$이므로 $gHg^{-1} = H$입니다.
+$K \triangleleft H$이므로 $gKg^{-1} \subseteq gHg^{-1} = H$입니다.
+$K$가 $G$의 정규부분군이 되기 위해서는 $gKg^{-1} \subseteq K$여야 합니다.
+일반적으로, $K \triangleleft H$이고 $H \triangleleft G$일 때 $K \triangleleft G$는 성립하지 않습니다.
+반례를 찾기 위해 $G=S_4$, $H=A_4$ (정규부분군). $K=\{e\}$ (정규부분군). 이 경우 참입니다.
+하지만 더 일반적인 반례를 찾아야 합니다.
+$G=S_4$, $H=A_4$ (정규부분군). $K$를 $A_4$의 정규부분군으로 선택합니다. $K=V_4 = \{e, (12)(34), (13)(24), (14)(23)\}$. $V_4 \triangleleft A_4$입니다.
+$K \triangleleft H$이고 $H \triangleleft G$일 때 $K \triangleleft G$가 성립하는지 확인합니다. $V_4$는 $S_4$의 정규부분군이 아닙니다. (예: $(12) V_4 (12)^{-1} = \{(12), (21)(34), (13)(24), (14)(23)\}$, 이는 $V_4$가 아닙니다.)
+따라서 명제 2는 **거짓**입니다.
+
+Reasoning step 3: 최종 결론 도출
+명제 1: 거짓
+명제 2: 거짓
+따라서 정답은 B) 거짓, 거짓입니다.
+
+ANSWER: B",True
+5,abstract_algebra,"주어진 다항식환에서 주어진 다항식의 곱을 구하십시오. Z_8[x]에서 f(x) = 4x - 5, g(x) = 2x^2 - 4x + 2입니다.",B,"주어진 문제는 $\mathbb{Z}_8[x]$라는 다항식환에서 두 다항식 $f(x) = 4x - 5$와 $g(x) = 2x^2 - 4x + 2$의 곱 $f(x)g(x)$를 구하는 것입니다.
+
+$\mathbb{Z}_8$은 나머지 연산이 8로 나눈 나머지로 이루어진 정수들의 집합 $\{0, 1, 2, 3, 4, 5, 6, 7\}$입니다. 즉, 모든 계산은 모듈로 8에서 이루어집니다.
+
+먼저, 다항식의 계수들을 $\mathbb{Z}_8$의 원소로 표현해야 합니다.
+$f(x) = 4x - 5$. $\mathbb{Z}_8$에서 $-5$는 $8 - 5 = 3$과 합동이므로, $f(x) = 4x + 3$ (또는 $4x - 5 \equiv 4x + 3 \pmod{8}$).
+$g(x) = 2x^2 - 4x + 2$.
+
+이제 두 다항식을 곱합니다:
+$$f(x)g(x) = (4x - 5)(2x^2 - 4x + 2)$$
+
+분배 법칙을 사용하여 전개합니다:
+$$f(x)g(x) = 4x(2x^2 - 4x + 2) - 5(2x^2 - 4x + 2)$$
+$$f(x)g(x) = (4x \cdot 2x^2) + (4x \cdot (-4x)) + (4x \cdot 2) + (-5 \cdot 2x^2) + (-5 \cdot (-4x)) + (-5 \cdot 2)$$
+$$f(x)g(x) = 8x^3 - 16x^2 + 8x - 10x^2 + 20x - 10$$
+
+이제 각 항을 $\mathbb{Z}_8$에서 계산합니다 (모든 계수를 8로 나눈 나머지를 취합니다):
+1. $8x^3$: $8 \equiv 0 \pmod{8}$, 따라서 $8x^3 \equiv 0x^3 = 0$.
+2. $-16x^2$: $-16 = -2 \times 8$, 따라서 $-16 \equiv 0 \pmod{8}$, 따라서 $-16x^2 \equiv 0$.
+3. $8x$: $8 \equiv 0 \pmod{8}$, 따라서 $8x \equiv 0$.
+4. $-10x^2$: $-10 = -2 \times 8 + 6$, 따라서 $-10 \equiv 6 \pmod{8}$, 따라서 $-10x^2 \equiv 6x^2$.
+5. $20x$: $20 = 2 \times 8 + 4$, 따라서 $20 \equiv 4 \pmod{8}$, 따라서 $20x \equiv 4x$.
+6. $-10$: $-10 = -2 \times 8 + 6$, 따라서 $-10 \equiv 6 \pmod{8}$.
+
+모든 항을 합치면:
+$$f(x)g(x) = 0 + 0 + 0 + 6x^2 + 4x + 6$$
+$$f(x)g(x) = 6x^2 + 4x + 6$$
+
+따라서 $\mathbb{Z}_8[x]$에서의 곱은 $6x^2 + 4x + 6$입니다.
+
+선택지 확인:
+A) $2x^2 + 5$
+B) $6x^2 + 4x + 6$
+C) $0$
+D) $x^2 + 1$
+
+계산 결과는 B와 일치합니다.
+
+ANSWER: B",True
+6,abstract_algebra,명제 1 | 어떤 군에 차수가 15인 요소가 있다면 이 군에는 차수가 15인 요소가 8개 이상 있어야 한다. 명제 2 | 어떤 군에 차수가 15인 요소가 8개 이상 있다면 이 군에는 차수가 15일 요소가 최소 16개 이상 있어야 한다.,A,"Successful reasoning steps:
+Reasoning step 1: 명제 1 분석:** ""어떤 군에 차수가 15인 요소가 있다면 이 군에는 차수가 15인 요소가 8개 이상 있어야 한다."" 이 명제는 '존재'라는 조건이 '최소 8개 이상'이라는 개수 조건을 필연적으로 보장한다는 의미입니다. 만약 차수가 15인 요소가 정확히 1개만 존재하는 군이 존재한다면, 명제 1은 거짓이 됩니다.
+*   **반례:** 순환군 $G = \mathbb{Z}_{15}$를 생각해 봅시다. 이 군에는 차수가 15인 원소(0 또는 15)가 정확히 1개만 존재합니다. 1개는 8개 이상이 아니므로, 명제 1은 **거짓**입니다.
+
+Reasoning step 2: 명제 2 분석:** ""어떤 군에 차수가 15인 요소가 8개 이상 있다면 이 군에는 차수가 15인 요소가 최소 16개 이상 있어야 한다."" 명제 2는 ""차수가 15인 원소의 개수 $k \ge 8$ 이면, $k \ge 16$ 이다""를 주장합니다.
+*   **반례:** 만약 차수가 15인 원소가 정확히 8개만 존재하는 군이 존재한다면 (즉, $k=8$), 명제 2는 전제($k \ge 8$)는 참이지만 결론($k \ge 16$)은 거짓이 되어 명제 2는 거짓이 됩니다. 군론에서 차수가 $n$인 원소의 개수에 대한 이러한 엄격한 하한선은 보편적인 정리가 아니므로, 명제 2는 **거짓**입니다.
+
+Reasoning step 3: 최종 결론 도출: 명제 1은 거짓이고 명제 2는 거짓입니다. 따라서 정답은 B) 거짓, 거짓입니다.
+
+ANSWER: B",False

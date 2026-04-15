@@ -1,0 +1,66 @@
+
+실험 시작
+모델: /data/yejinhong/gemma-4-E4B-it
+MAX_DEPTH=2, MAX_WIDTH=3
+
+
+#################################################################
+  AIME — 5문제 / 모델: gemma-4-E4B-it
+#################################################################
+[LLM] 모델 로딩 중: /data/yejinhong/gemma-4-E4B-it
+Loading weights:   0%|          | 0/2130 [00:00<?, ?it/s]Loading weights:  34%|███▍      | 719/2130 [00:00<00:00, 7129.59it/s]Loading weights:  67%|██████▋   | 1432/2130 [00:01<00:00, 700.85it/s]Loading weights:  90%|████████▉ | 1916/2130 [00:01<00:00, 1015.31it/s]Loading weights: 100%|██████████| 2130/2130 [00:01<00:00, 1116.18it/s]
+Some parameters are on the meta device because they were offloaded to the cpu.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[LLM] 로딩 완료!
+Traceback (most recent call last):
+  File "/data/yejinhong/adaptive_ttc/benchmark/evaluate_e4b.py", line 240, in <module>
+    b_rows, m_rows = run_aime(n_samples=args.aime_n)
+  File "/data/yejinhong/adaptive_ttc/benchmark/evaluate_e4b.py", line 84, in run_aime
+    b_pred    = call_llm(build_solve_prompt(q))
+  File "/data/yejinhong/adaptive_ttc/llm.py", line 36, in call_llm
+    outputs = model.generate(
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/generation/utils.py", line 2543, in generate
+    result = decoding_method(
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/generation/utils.py", line 2736, in _sample
+    outputs = self._prefill(
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/generation/utils.py", line 3768, in _prefill
+    return self(**model_inputs, return_dict=True)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/utils/generic.py", line 876, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2425, in forward
+    outputs = self.model(
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/utils/generic.py", line 952, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/utils/generic.py", line 876, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 2195, in forward
+    per_layer_inputs = self.language_model.get_per_layer_inputs(llm_input_ids, llm_inputs_embeds)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/transformers/models/gemma4/modeling_gemma4.py", line 1650, in get_per_layer_inputs
+    return self.embed_tokens_per_layer(input_ids).reshape(
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/accelerate/hooks.py", line 187, in new_forward
+    args, kwargs = module._hf_hook.pre_forward(module, *args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/accelerate/hooks.py", line 50, in wrapper
+    return wrapper._compiled_fn(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1263, in _fn
+    return fn(*args, **kwargs)
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/accelerate/hooks.py", line 378, in pre_forward
+    set_module_tensor_to_device(
+  File "/data/yejinhong/.conda/envs/ttc/lib/python3.10/site-packages/accelerate/utils/modeling.py", line 343, in set_module_tensor_to_device
+    new_value = value.to(device, non_blocking=non_blocking)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 5.25 GiB. GPU 1 has a total capacity of 23.64 GiB of which 96.12 MiB is free. Process 3324807 has 21.84 GiB memory in use. Including non-PyTorch memory, this process has 1.69 GiB memory in use. Of the allocated memory 1.25 GiB is allocated by PyTorch, and 1.66 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

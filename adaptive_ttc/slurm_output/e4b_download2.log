@@ -1,0 +1,6 @@
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Still waiting to acquire lock on /data/yejinhong/gemma-4-E4B-it/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Still waiting to acquire lock on /data/yejinhong/gemma-4-E4B-it/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Still waiting to acquire lock on /data/yejinhong/gemma-4-E4B-it/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Still waiting to acquire lock on /data/yejinhong/gemma-4-E4B-it/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 9 files:  11%|█         | 1/9 [00:00<00:05,  1.42it/s]

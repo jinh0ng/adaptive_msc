@@ -1,0 +1,221 @@
+idx,question,gold,predicted,correct
+1,"Patrick started walking at a constant rate along a straight road from school to the park. One hour after Patrick left, Tanya started running along the same road from school to the park. One hour after Tanya left, Jose started bicycling along the same road from school to the park. Tanya ran at a constant rate of $2$ miles per hour faster than Patrick walked, Jose bicycled at a constant rate of $7$ miles per hour faster than Tanya ran, and all three arrived at the park at the same time. The distance from the school to the park is $\frac{m}{n}$ miles, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",277,"Let $v_P$, $v_T$, and $v_J$ be the constant speeds of Patrick, Tanya, and Jose, respectively, in miles per hour (mph).
+Let $D$ be the distance from the school to the park in miles.
+
+We are given the following relationships between the speeds:
+1. Tanya ran $2$ mph faster than Patrick: $v_T = v_P + 2$.
+2. Jose bicycled $7$ mph faster than Tanya: $v_J = v_T + 7$.
+
+Substituting $v_T$ from (1) into (2):
+$v_J = (v_P + 2) + 7 = v_P + 9$.
+
+Let $t_P$, $t_T$, and $t_J$ be the time taken by Patrick, Tanya, and Jose to travel the distance $D$.
+The relationship between distance, speed, and time is $D = v \cdot t$, so $t = D/v$.
+
+Patrick started first. Tanya started 1 hour later. Jose started 1 hour after Tanya, which is 2 hours after Patrick.
+Let $T$ be the time when they all arrive at the park, measured from Patrick's start time.
+
+Patrick's travel time: $t_P = T$.
+Tanya started 1 hour later, so her travel time is $t_T = T - 1$.
+Jose started 2 hours later, so his travel time is $t_J = T - 2$.
+
+Since they all arrive at the same time, the time taken for each person to cover distance $D$ is:
+$t_P = \frac{D}{v_P}$
+$t_T = \frac{D}{v_T}$
+$t_J = \frac{D}{v_J}$
+
+We have the following system of equations based on the time differences:
+1) $T = \frac{D}{v_P}$
+2) $T - 1 = \frac{D}{v_T}$
+3) $T - 2 = \frac{D}{v_J}$
+
+Substitute the speed relationships in terms of $v_P$:
+$v_T = v_P + 2$
+$v_J = v_P + 9$
+
+The equations become:
+1) $T = \frac{D}{v_P}$
+2) $T - 1 = \frac{D}{v_P + 2}$
+3) $T - 2 = \frac{D}{v_P + 9}$
+
+From (1), $D = v_P T$. Substitute this into (2) and (3):
+2) $T - 1 = \frac{v_P T}{v_P + 2}$
+3) $T - 2 = \frac{v_P T}{v_P + 9}$
+
+Solve equation (2) for $T$:
+$(T - 1)(v_P + 2) = v_P T$
+$T v_P + 2T - v_P - 2 = v_P T$
+$2T - v_P - 2 = 0$
+$2T = v_P + 2$
+$T = \frac{v_P + 2}{2}$
+
+Now substitute this expression for $T$ into equation (3):
+$\left(\frac{v_P + 2}{2}\right) - 2 = \frac{v_P \left(\frac{v_P + 2}{2}\right)}{v_P + 9}$
+
+Simplify the left side (LHS):
+LHS $= \frac{v_P + 2 - 4}{2} = \frac{v_P - 2}{2}$
+
+Simplify the right side (RHS):
+RHS $= \frac{\frac{v_P(v_P + 2)}{2}}{v_P + 9} = \frac{v_P(v_P + 2)}{2(v_P + 9)}$
+
+Set LHS = RHS:
+$\frac{v_P - 2}{2} = \frac{v_P(v_P + 2)}{2(v_P + 9)}$
+
+Multiply both sides by $2$:
+$v_P - 2 = \frac{v_P(v_P + 2)}{v_P + 9}$
+
+Multiply both sides by $(v_P + 9)$:
+$(v_P - 2)(v_P + 9) = v_P(v_P + 2",False
+2,"Find the number of positive integer palindromes written in base $10$ with no zero digits, and whose digits add up to $13$. For example, $42124$ has these properties. Recall that a palindrome is a number whose representation reads the same from left to right as from right to left.",62,"The problem asks for the number of positive integer palindromes with no zero digits whose digits sum to $13$.
+
+Let the palindrome have $L$ digits. Since all digits are non-zero (i.e., in $\{1, 2, \ldots, 9\}$), the sum of digits $S=13$ is relatively small, suggesting the length $L$ is also small.
+
+We consider two cases: odd length and even length.
+
+### Case 1: Odd Length Palindromes ($L = 2k+1$, $k \ge 0$)
+The digits are $d_1, d_2, \ldots, d_k, d_{k+1}, d_k, \ldots, d_2, d_1$.
+The sum of digits is $S = 2(d_1 + d_2 + \ldots + d_k) + d_{k+1} = 13$.
+Let $D_k = d_1 + d_2 + \ldots + d_k$. Then $2D_k + d_{k+1} = 13$.
+Since $d_i \ge 1$, we must have $D_k \ge k$. Also, $d_{k+1} \in \{1, 3, 5, 7, 9\}$ (since $13 - 2D_k$ must be odd).
+
+We analyze based on $d_{k+1}$:
+1. $d_{k+1} = 1 \implies 2D_k = 12 \implies D_k = 6$.
+We need to find the number of ways to write $6$ as a sum of $k$ positive integers ($d_1, \ldots, d_k$), where $k \ge 0$.
+If $k=0$, $D_0=0 \ne 6$.
+If $k \ge 1$, the number of ways is the number of compositions of 6 into $k$ parts, $\binom{6-1}{k-1} = \binom{5}{k-1}$.
+Total ways for $D_k=6$: $\sum_{k=1}^{6} \binom{5}{k-1} = \sum_{j=0}^{5} \binom{5}{j} = 2^5 = 32$.
+
+2. $d_{k+1} = 3 \implies 2D_k = 10 \implies D_k = 5$.
+Total ways for $D_k=5$: $\sum_{k=1}^{5} \binom{5-1}{k-1} = \sum_{j=0}^{4} \binom{4}{j} = 2^4 = 16$.
+
+3. $d_{k+1} = 5 \implies 2D_k = 8 \implies D_k = 4$.
+Total ways for $D_k=4$: $\sum_{k=1}^{4} \binom{4-1}{k-1} = \sum_{j=0}^{3} \binom{3}{j} = 2^3 = 8$.
+
+4. $d_{k+1} = 7 \implies 2D_k = 6 \implies D_k = 3$.
+Total ways for $D_k=3$: $\sum_{k=1}^{3} \binom{3-1}{k-1} = \sum_{j=0}^{2} \binom{2}{j} = 2^2 = 4$.
+
+5. $d_{k+1} = 9 \implies 2D_k = 4 \implies D_k = 2$.
+Total ways for $D_k=2$: $\sum_{k=1}^{2} \binom{2-1}{k-1} = \sum_{j=0}^{1} \binom{1}{j} = 2^1 = 2$.
+
+Total for odd length palindromes: $32 + 16 + 8 + 4 + 2 = 62$.
+
+### Case 2: Even Length Palindromes ($L = 2k$, $k \ge 1$)
+The digits are $d_1, d_2, \ldots, d_k, d_k, \ldots, d_2, d_1$.
+The sum of digits is $S = 2(d_1 + d_2 + \ldots + d_k) = 13$.
+$2D_k = 13$. Since $13$ is odd, $D_k$ cannot be an integer.",False
+3,"A hemisphere with radius $200$ sits on top of a horizontal circular disk with radius $200,$ and the hemisphere and disk have the same center. Let $\mathcal T$ be the region of points P in the disk such that a sphere of radius $42$ can be placed on top of the disk at $P$ and lie completely inside the hemisphere. The area of $\mathcal T$ divided by the area of the disk is $\tfrac pq,$ where $p$ and $q$ are relatively prime positive integers. Find $p+q.$",79,"The problem asks for the ratio of the area of the region $\mathcal{T}$ to the area of the disk, and then to find $p+q$ where the ratio is $\frac{p}{q}$ in simplest form.
+
+1.  **Set up the geometry and constraints:**
+    Let the center of the disk and the hemisphere be the origin $O=(0, 0, 0)$. The disk lies in the $xy$-plane, with radius $R=200$.
+    Let $P$ be a point in the disk, located at a distance $d$ from the origin, $d = \sqrt{x_P^2 + y_P^2}$.
+    A sphere $S$ of radius $r=42$ is placed on top of the disk at $P$. The center of this sphere, $C_s$, is located at $(x_P, y_P, r)$.
+
+2.  **Determine the condition for containment:**
+    The sphere $S$ must lie completely inside the hemisphere $H$, which is the upper half of a sphere of radius $R=200$ centered at $O$. This means every point in $S$ must be within distance $R$ of $O$.
+    The distance from the origin $O$ to the center of the sphere $C_s$ is:
+    $$D_{OC_s} = \sqrt{x_P^2 + y_P^2 + r^2} = \sqrt{d^2 + 42^2}$$
+    The point in $S$ farthest from $O$ lies along the line connecting $O$ and $C_s$, and its distance is:
+    $$D_{\max} = D_{OC_s} + r = \sqrt{d^2 + 42^2} + 42$$
+    For $S$ to be completely inside $H$, we must have $D_{\max} \le R$:
+    $$\sqrt{d^2 + 42^2} + 42 \le 200$$
+
+3.  **Solve for the region $\mathcal{T}$:**
+    $$\sqrt{d^2 + 1764} \le 200 - 42$$
+    $$\sqrt{d^2 + 1764} \le 158$$
+    Squaring both sides:
+    $$d^2 + 1764 \le 158^2$$
+    $$d^2 + 1764 \le 24964$$
+    $$d^2 \le 24964 - 1764$$
+    $$d^2 \le 23200$$
+    The region $\mathcal{T}$ is the set of points $P$ in the disk such that their distance $d$ from the center is less than or equal to $\sqrt{23200}$. Since $23200 < 200^2 = 40000$, $\mathcal{T}$ is a circular disk of radius $R_{\mathcal{T}} = \sqrt{23200}$ centered at the origin.
+
+4.  **Calculate the ratio of areas:**
+    Area of $\mathcal{T}$: $A_{\mathcal{T}} = \pi R_{\mathcal{T}}^2 = 23200\pi$.
+    Area of the disk: $A_{\text{disk}} = \pi R^2 = 200^2\pi = 40000\pi$.
+    The ratio is:
+    $$\frac{A_{\mathcal{T}}}{A_{\text{disk}}} = \frac{23200\pi}{40000\pi} = \frac{232}{400}$$
+
+5.  **Simplify the fraction and find $p+q$:**
+    We simplify $\frac{232}{400}$. Both are divisible by 8:
+    $$\frac{232 \div 8}{400 \div 8} = \frac{29}{50}$$
+    The ratio is $\frac{p}{q} = \frac{29}{50}$. $p=29$ and $q=50$. They are relatively prime.
+    We need to find $p+q$:
+    $$p+q = 29 + 50 = 79$$
+
+ANSWER: 79",True
+4,Find the number of integers less than or equal to 100 that are equal to $a+b+ab$ for some choice of distinct positive integers a and b.,70,"The problem asks for the number of distinct integers $N \le 100$ such that $N = a+b+ab$ for some choice of distinct positive integers $a$ and $b$.
+
+We rewrite the expression:
+$$N = a+b+ab = (a+1)(b+1) - 1$$
+Let $P = N+1 = (a+1)(b+1)$.
+Let $x = a+1$ and $y = b+1$. Since $a \ge 1$ and $b \ge 1$, we have $x \ge 2$ and $y \ge 2$. Since $a \neq b$, we have $x \neq y$.
+The condition $N \le 100$ implies $P = N+1 \le 101$.
+
+We need to count the number of unique products $P = xy$ such that $P \le 101$, where $x \ge 2$, $y \ge 2$, and $x \neq y$. To count unique products, we enforce $x < y$.
+
+This is equivalent to counting the number of composite integers $P \le 101$ that are not perfect squares of primes, or more simply, counting the number of integers $P \le 101$ that have at least one factorization $P=xy$ with $2 \le x < y$.
+
+The set of integers $P \le 101$ that *do not* satisfy this condition are:
+1. $P=1$ (since $x, y \ge 2$).
+2. Prime numbers $P$ (since their only factors are 1 and $P$).
+3. Perfect squares $P=s^2$ where $s$ is prime, $P=p^2$. If $P=p^2$, the only factorization with factors $\ge 2$ is $p \times p$, which violates $x \neq y$.
+
+Let's count the excluded numbers $P \le 101$:
+1. $P=1$. (1 number)
+2. Primes $\le 101$: There are 26 primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101. (26 numbers)
+3. Squares of primes $\le 101$: $2^2=4, 3^2=9, 5^2=25, 7^2=49$. (4 numbers)
+
+We must ensure that the set of squares of primes is disjoint from the set of primes, which is true. We must also ensure that the squares of composite numbers are included, as they *are* valid products.
+For example, $16 = 4^2$. $16 = 2 \times 8$. Since $2 \neq 8$, $P=16$ is valid.
+$36 = 6^2$. $36 = 2 \times 18$. Valid.
+$64 = 8^2$. $64 = 2 \times 32$. Valid.
+$100 = 10^2$. $100 = 2 \times 50$. Valid.
+
+The only numbers $P \le 101$ that cannot be written as $xy$ with $2 \le x < y$ are $P=1$ and the prime numbers $P$.
+
+Total numbers $\le 101$ is 101.
+Number of excluded values: $1 + 26 = 27$.
+Number of valid products $P$: $101 - 27 = 74$.
+
+Wait, let's re-examine the condition for $P=p^2$. If $P=p^2$, the only factorization into factors $\ge 2$ is $p \times p$. Since we require $x \neq y$, $P=p^2$ is indeed excluded.
+The excluded set is $\{1\} \cup \{\text{Primes}\} \cup \{p^2 \mid p \text{ is prime and } p^2 \le 101\}$.
+
+Excluded set:
+1. $P=1$. (1)
+2. Primes: 26 numbers.
+3. Squares of",False
+5,"A plane contains points $A$ and $B$ with $AB = 1$. Point $A$ is rotated in the plane counterclockwise through an acute angle $\theta$ around point $B$ to point $A^\prime$. Then $B$ is rotated in the plane clockwise through angle $\theta$ around point $A^\prime$ to point $B^\prime$. Suppose that $AB^\prime = \frac{4}{3}$. The value of $\cos \theta$ can be written as $\frac{m}{n}$ , where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",65,"The problem asks for the value of $m+n$, where $\cos\theta = m/n$ in simplest form.
+
+We used complex numbers to model the rotations. Let $B$ be the origin ($B=0$). Since $AB=1$, we can set $A=1$.
+
+1. **Rotation of $A$ around $B$ to $A'$:**
+$A$ is rotated counterclockwise by $\theta$ around $B=0$.
+$$A' = A e^{i\theta} = 1 \cdot (\cos\theta + i\sin\theta) = \cos\theta + i\sin\theta$$
+
+2. **Rotation of $B$ around $A'$ to $B'$:**
+$B=0$ is rotated clockwise by $\theta$ around $A'$.
+$$B' - A' = (B - A') e^{-i\theta}$$
+$$B' - A' = (0 - A') e^{-i\theta} = -A' e^{-i\theta}$$
+$$B' = A' - A' e^{-i\theta} = A'(1 - e^{-i\theta})$$
+Substituting $A' = e^{i\theta}$:
+$$B' = e^{i\theta} (1 - e^{-i\theta}) = e^{i\theta} - 1$$
+$$B' = (\cos\theta + i\sin\theta) - 1 = (\cos\theta - 1) + i\sin\theta$$
+
+3. **Using the distance $AB'$:**
+We are given $AB' = 4/3$. We calculate the squared distance $|B' - A|^2$.
+$$B' - A = [(\cos\theta - 1) + i\sin\theta] - 1 = (\cos\theta - 2) + i\sin\theta$$
+$$AB'^2 = (\cos\theta - 2)^2 + (\sin\theta)^2$$
+$$AB'^2 = \cos^2\theta - 4\cos\theta + 4 + \sin^2\theta$$
+Since $\cos^2\theta + \sin^2\theta = 1$:
+$$AB'^2 = 1 - 4\cos\theta + 4 = 5 - 4\cos\theta$$
+
+We set this equal to $(4/3)^2 = 16/9$:
+$$\frac{16}{9} = 5 - 4\cos\theta$$
+$$4\cos\theta = 5 - \frac{16}{9} = \frac{45}{9} - \frac{16}{9} = \frac{29}{9}$$
+$$\cos\theta = \frac{29}{36}$$
+
+This is in the form $m/n$ where $m=29$ and $n=36$. Since 29 is prime and $36 = 2^2 \cdot 3^2$, $\gcd(29, 36) = 1$.
+We need to find $m+n$:
+$$m+n = 29 + 36 = 65$$
+
+ANSWER: 65",True

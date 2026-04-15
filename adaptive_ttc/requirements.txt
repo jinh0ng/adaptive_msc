@@ -1,0 +1,14 @@
+# 모델 로딩
+transformers>=4.47.0
+torch>=2.2.0
+accelerate>=0.27.0
+bitsandbytes>=0.43.0
+
+# 데이터셋
+datasets>=2.18.0
+huggingface_hub>=0.21.0
+
+# 유틸
+tqdm>=4.66.0
+numpy>=1.26.0
+pandas>=2.2.0

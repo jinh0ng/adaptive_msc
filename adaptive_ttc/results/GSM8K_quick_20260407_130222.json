@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "dataset": "GSM8K",
+    "mode": "quick",
+    "model": "/data/yejinhong/gemma-4-E2B-it",
+    "max_depth": 2,
+    "max_width": 3,
+    "timestamp": "20260407_130222"
+  },
+  "summary": {
+    "baseline_accuracy": 100.0,
+    "mas_accuracy": 66.67,
+    "diff": -33.33,
+    "winner": "BASELINE"
+  },
+  "baseline": {
+    "score": {
+      "accuracy": 100.0,
+      "correct": 3,
+      "total": 3
+    },
+    "results": [
+      {
+        "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+        "gold": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+        "predicted": "Here is the step-by-step solution:\n\n1.  **Determine the total number of eggs laid per day:**\n    Janet's ducks lay 16 eggs per day.\n\n2.  **Determine the number of eggs Janet eats for breakfast:**\n    She eats 3 eggs for breakfast every morning.\n\n3.  **Determine the number of eggs Janet bakes for friends:**\n    She bakes 4 eggs for her friends every day.\n\n4.  **Calculate the total number of eggs used (eaten or baked):**\n    Total eggs used = Eggs eaten + Eggs baked\n    Total eggs used = $3 + 4 = 7$ eggs.\n\n5.  **Calculate the number of remaining eggs sold:**\n    Remaining eggs = Total eggs laid - Total eggs used\n    Remaining eggs = $16 - 7 = 9$ eggs.\n\n6.  **Calculate the total money made from selling the remaining eggs:**\n    She sells the remainder at the farmers' market for $\\$2$ per egg.\n    Money made = Remaining eggs $\\times$ Price per egg\n    Money made = $9 \\times \\$2 = \\$18$.\n\nThe amount Janet makes every day at the farmers' market is $\\$18$.\n\nANSWER: 18",
+        "correct": true
+      },
+      {
+        "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+        "gold": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+        "predicted": "Here is the step-by-step solution:\n\n1.  **Identify the amount of blue fiber:** The robe takes 2 bolts of blue fiber.\n2.  **Calculate the amount of white fiber:** The robe takes half that much white fiber compared to the blue fiber.\n    $$\\text{White fiber} = \\frac{1}{2} \\times (\\text{Blue fiber})$$\n    $$\\text{White fiber} = \\frac{1}{2} \\times 2 \\text{ bolts} = 1 \\text{ bolt}$$\n3.  **Calculate the total number of bolts:** The total number of bolts is the sum of the blue fiber bolts and the white fiber bolts.\n    $$\\text{Total bolts} = \\text{Blue fiber bolts} + \\text{White fiber bolts}$$\n    $$\\text{Total bolts} = 2 + 1 = 3 \\text{ bolts}$$\n\nAnswer: 3\n\nANSWER: 3",
+        "correct": true
+      },
+      {
+        "question": "Josh decides to try flipping a house.  He buys a house for $80,000 and then puts in $50,000 in repairs.  This increased the value of the house by 150%.  How much profit did he make?",
+        "gold": "The cost of the house and repairs came out to 80,000+50,000=$<<80000+50000=130000>>130,000\nHe increased the value of the house by 80,000*1.5=<<80000*1.5=120000>>120,000\nSo the new value of the house is 120,000+80,000=$<<120000+80000=200000>>200,000\nSo he made a profit of 200,000-130,000=$<<200000-130000=70000>>70,000\n#### 70000",
+        "predicted": "Here is the step-by-step solution:\n\n**1. Determine the initial cost of the house:**\nInitial purchase price = $\\$80,000$\n\n**2. Calculate the total investment (cost basis):**\nJosh put in money for the purchase and for repairs.\nCost of repairs = $\\$50,000$\nTotal investment (Cost Basis) = Initial purchase price + Cost of repairs\nTotal investment = $\\$80,000 + \\$50,000 = \\$130,000$\n\n**3. Calculate the increase in value:**\nThe problem states that the repairs increased the value of the house by $150\\%$. This increase is based on the original purchase price.\nIncrease in value = $150\\%$ of the initial purchase price\nIncrease in value = $1.50 \\times \\$80,000$\nIncrease in value = $\\$120,000$\n\n**4. Calculate the final value of the house:**\nFinal Value = Initial Purchase Price + Increase in Value\nFinal Value = $\\$80,000 + \\$120,000 = \\$200,000$\n\n*Alternatively, the final value is the original value plus the $150\\%$ increase:\nFinal Value = $\\$80,000 \\times (1 + 1.50) = \\$80,000 \\times 2.50 = \\$200,000$*\n\n**5. Calculate the profit:**\nProfit is the final value of the house minus the total amount Josh invested.\nProfit = Final Value - Total Investment\nProfit = $\\$200,000 - \\$130,000$\nProfit = $\\$70,000$\n\n**Verification using the definition of profit:**\nProfit = Final Value - (Initial Purchase Price + Repair Costs)\nProfit = $\\$200,000 - (\\$80,000 + \\$50,000)$\nProfit = $\\$200,000 - \\$130,000$\nProfit = $\\$70,000$\n\nThe profit Josh made is $\\$70,000$.\n\nANSWER: 70000",
+        "correct": true
+      }
+    ]
+  },
+  "mas": {
+    "score": {
+      "accuracy": 66.67,
+      "correct": 2,
+      "total": 3
+    },
+    "results": [
+      {
+        "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+        "gold": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+        "predicted": "Here is the step-by-step solution:\n\n1.  **Determine the total number of eggs laid per day:**\n    Janet's ducks lay 16 eggs per day.\n\n2.  **Determine the number of eggs Janet eats for breakfast:**\n    She eats 3 eggs for breakfast every morning.\n\n3.  **Determine the number of eggs Janet bakes for friends:**\n    She bakes 4 eggs for her friends every day.\n\n4.  **Calculate the total number of eggs used (eaten or baked):**\n    Total eggs used = Eggs eaten + Eggs baked\n    Total eggs used = $3 + 4 = 7$ eggs.\n\n5.  **Calculate the number of remaining eggs sold:**\n    Remaining eggs = Total eggs laid - Total eggs used\n    Remaining eggs = $16 - 7 = 9$ eggs.\n\n6.  **Calculate the total money made from selling the remaining eggs:**\n    She sells the remainder at the farmers' market for $\\$2$ per egg.\n    Money made = Remaining eggs $\\times$ Price per egg\n    Money made = $9 \\times \\$2 = \\$18$.\n\nThe amount Janet makes every day at the farmers' market is $\\$18$.\n\nANSWER: 18",
+        "correct": true
+      },
+      {
+        "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+        "gold": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+        "predicted": "Here is the step-by-step solution:\n\n1.  **Identify the amount of blue fiber:** The robe takes 2 bolts of blue fiber.\n2.  **Calculate the amount of white fiber:** The robe takes half that much white fiber compared to the blue fiber.\n    $$\\text{White fiber} = \\frac{1}{2} \\times (\\text{Blue fiber})$$\n    $$\\text{White fiber} = \\frac{1}{2} \\times 2 \\text{ bolts} = 1 \\text{ bolt}$$\n3.  **Calculate the total number of bolts:** The total number of bolts is the sum of the blue fiber bolts and the white fiber bolts.\n    $$\\text{Total bolts} = \\text{Blue fiber bolts} + \\text{White fiber bolts}$$\n    $$\\text{Total bolts} = 2 + 1 = 3 \\text{ bolts}$$\n\nAnswer: 3\n\nANSWER: 3",
+        "correct": true
+      },
+      {
+        "question": "Josh decides to try flipping a house.  He buys a house for $80,000 and then puts in $50,000 in repairs.  This increased the value of the house by 150%.  How much profit did he make?",
+        "gold": "The cost of the house and repairs came out to 80,000+50,000=$<<80000+50000=130000>>130,000\nHe increased the value of the house by 80,000*1.5=<<80000*1.5=120000>>120,000\nSo the new value of the house is 120,000+80,000=$<<120000+80000=200000>>200,000\nSo he made a profit of 200,000-130,000=$<<200000-130000=70000>>70,000\n#### 70000",
+        "predicted": "The main problem is: Josh buys a house for $\\$80,000$ and then puts in $\\$50,000$ in repairs. This increased the value of the house by $150\\%$. How much profit did he make?\n\nWe need to calculate the profit, which is:\n$$\\text{Profit} = \\text{Final Value of House} - \\text{Total Investment}$$\n\n**Step 1: Calculate the Total Investment (Cost Basis)**\nJosh's total investment is the purchase price plus the repair costs.\nPurchase Price ($P$): $\\$80,000$\nRepair Costs ($R$): $\\$50,000$\n$$\\text{Total Investment} = P + R = \\$80,000 + \\$50,000 = \\$130,000$$\n\n**Step 2: Calculate the Final Value of the House**\nThe problem states that the repairs increased the *value* of the house by $150\\%$. This increase is based on the original value of the house (the purchase price).\nOriginal Value = $\\$80,000$\nIncrease in Value = $150\\%$ of $\\$80,000$\n$$\\text{Increase in Value} = 1.50 \\times \\$80,000 = \\$120,000$$\n$$\\text{Final Value} = \\text{Original Value} + \\text{Increase in Value}$$\n$$\\text{Final Value} = \\$80,000 + \\$120,000 = \\$200,000$$\n\n*Self-Check on Value Calculation:* An increase of $150\\%$ means the new value is $100\\% + 150\\% = 250\\%$ of the original value.\n$$\\text{Final Value} = 2.50 \\times \\$80,000 = \\$200,000$$ (This confirms the calculation.)\n\n**Step 3: Calculate the Profit**\nProfit is the Final Value minus the Total Investment.\n$$\\text{Profit} = \\text{Final Value} - \\text{Total Investment}$$\n$$\\text{Profit} = \\$200,000 - \\$130,000$$\n$$\\text{Profit} = \\$7",
+        "correct": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+============================================================
+  [Smoke Test] E2B 모델 / GSM8K 1문제
+  MODEL_PATH : /data/yejinhong/gemma-4-E2B-it
+============================================================
+
+📝 문제:
+Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?
+
+✅ 정답 (gold):
+Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.
+She makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.
+#### 18
+
+------------------------------------------------------------
+[LLM] 추론 시작... (시간 걸릴 수 있음)
+[LLM] 모델 로딩 중: /data/yejinhong/gemma-4-E2B-it
+Loading weights:   0%|          | 0/2011 [00:00<?, ?it/s]Loading weights:   1%|▏         | 29/2011 [00:00<00:08, 237.02it/s]Loading weights:   3%|▎         | 54/2011 [00:00<00:08, 224.79it/s]Loading weights:   4%|▍         | 77/2011 [00:00<00:15, 128.56it/s]Loading weights:   5%|▍         | 96/2011 [00:00<00:14, 134.42it/s]Loading weights:   6%|▌         | 116/2011 [00:00<00:12, 150.78it/s]Loading weights:   7%|▋         | 134/2011 [00:00<00:14, 126.06it/s]Loading weights:   7%|▋         | 149/2011 [00:01<00:16, 114.38it/s]Loading weights:   9%|▊         | 173/2011 [00:01<00:13, 138.42it/s]Loading weights:   9%|▉         | 189/2011 [00:01<00:14, 128.84it/s]Loading weights:  10%|█         | 203/2011 [00:01<00:15, 116.31it/s]Loading weights:  11%|█         | 216/2011 [00:01<00:15, 117.54it/s]Loading weights:  12%|█▏        | 240/2011 [00:01<00:12, 141.75it/s]Loading weights:  13%|█▎        | 255/2011 [00:01<00:12, 135.34it/s]Loading weights:  13%|█▎        | 270/2011 [00:02<00:17, 101.56it/s]Loading weights:  15%|█▍        | 294/2011 [00:02<00:13, 129.66it/s]Loading weights:  16%|█▌        | 312/2011 [00:02<00:14, 120.59it/s]Loading weights:  16%|█▌        | 326/2011 [00:02<00:15, 107.31it/s]Loading weights:  17%|█▋        | 339/2011 [00:02<00:15, 109.88it/s]Loading weights:  18%|█▊        | 357/2011 [00:02<00:13, 124.97it/s]Loading weights:  19%|█▊        | 374/2011 [00:02<00:13, 119.58it/s]Loading weights:  19%|█▉        | 387/2011 [00:03<00:15, 102.74it/s]Loading weights:  20%|█▉        | 401/2011 [00:03<00:14, 108.94it/s]Loading weights:  21%|██        | 425/2011 [00:03<00:12, 127.03it/s]Loading weights:  22%|██▏       | 439/2011 [00:03<00:12, 126.01it/s]Loading weights:  22%|██▏       | 452/2011 [00:03<00:14, 108.89it/s]Loading weights:  23%|██▎       | 464/2011 [00:03<00:14, 106.24it/s]Loading weights:  24%|██▍       | 488/2011 [00:03<00:11, 131.50it/s]Loading weights:  25%|██▍       | 502/2011 [00:04<00:12, 125.12it/s]Loading weights:  26%|██▌       | 515/2011 [00:04<00:13, 108.04it/s]Loading weights:  26%|██▌       | 527/2011 [00:04<00:13, 108.64it/s]Loading weights:  27%|██▋       | 550/2011 [00:04<00:11, 132.23it/s]Loading weights:  28%|██▊       | 564/2011 [00:04<00:12, 119.50it/s]Loading weights:  29%|██▊       | 577/2011 [00:04<00:13, 105.15it/s]Loading weights:  29%|██▉       | 589/2011 [00:04<00:13, 106.40it/s]Loading weights:  30%|███       | 608/2011 [00:04<00:11, 125.91it/s]Loading weights:  31%|███       | 623/2011 [00:05<00:12, 114.13it/s]Loading weights:  32%|███▏      | 636/2011 [00:05<00:13, 102.25it/s]Loading weights:  32%|███▏      | 649/2011 [00:05<00:12, 107.11it/s]Loading weights:  33%|███▎      | 673/2011 [00:05<00:09, 137.43it/s]Loading weights:  34%|███▍      | 688/2011 [00:05<00:11, 110.57it/s]Loading weights:  35%|███▍      | 702/2011 [00:05<00:12, 101.84it/s]Loading weights:  36%|███▋      | 731/2011 [00:06<00:09, 131.85it/s]Loading weights:  37%|███▋      | 748/2011 [00:06<00:09, 138.35it/s]Loading weights:  37%|███▋      | 748/2011 [00:20<00:09, 138.35it/s]Loading weights:  37%|███▋      | 754/2011 [00:20<05:57,  3.52it/s] Loading weights:  38%|███▊      | 755/2011 [01:39<51:38,  2.47s/it]Loading weights:  60%|█████▉    | 1200/2011 [01:39<01:48,  7.45it/s]Loading weights:  61%|██████    | 1227/2011 [01:43<01:46,  7.39it/s]Loading weights:  62%|██████▏   | 1246/2011 [01:46<01:43,  7.40it/s]Loading weights:  63%|██████▎   | 1260/2011 [01:48<01:43,  7.29it/s]Loading weights:  63%|██████▎   | 1270/2011 [01:50<01:45,  7.00it/s]Loading weights:  64%|██████▎   | 1279/2011 [01:51<01:38,  7.45it/s]Loading weights:  64%|██████▍   | 1285/2011 [01:51<01:36,  7.52it/s]Loading weights:  64%|██████▍   | 1290/2011 [01:53<01:43,  6.96it/s]Loading weights:  64%|██████▍   | 1296/2011 [01:53<01:32,  7.69it/s]Loading weights:  65%|██████▍   | 1300/2011 [01:53<01:26,  8.26it/s]Loading weights:  65%|██████▍   | 1304/2011 [01:55<01:59,  5.92it/s]Loading weights:  65%|██████▌   | 1313/2011 [01:55<01:28,  7.92it/s]Loading weights:  65%|██████▌   | 1317/2011 [01:55<01:18,  8.87it/s]Loading weights:  66%|██████▌   | 1320/2011 [01:57<01:49,  6.29it/s]Loading weights:  66%|██████▌   | 1323/2011 [01:57<01:57,  5.87it/s]Loading weights:  66%|██████▌   | 1330/2011 [01:58<01:19,  8.58it/s]Loading weights:  66%|██████▋   | 1333/2011 [01:58<01:10,  9.66it/s]Loading weights:  66%|██████▋   | 1336/2011 [01:58<01:27,  7.67it/s]Loading weights:  67%|██████▋   | 1338/2011 [02:00<02:25,  4.63it/s]Loading weights:  67%|██████▋   | 1346/2011 [02:00<01:35,  6.97it/s]Loading weights:  67%|██████▋   | 1352/2011 [02:01<01:21,  8.13it/s]Loading weights:  68%|██████▊   | 1360/2011 [02:01<00:53, 12.07it/s]Loading weights:  68%|██████▊   | 1376/2011 [02:01<00:27, 23.39it/s]Loading weights:  69%|██████▉   | 1394/2011 [02:01<00:15, 38.79it/s]Loading weights:  70%|██████▉   | 1404/2011 [02:01<00:14, 42.43it/s]Loading weights:  70%|███████   | 1417/2011 [02:01<00:10, 54.09it/s]Loading weights:  72%|███████▏  | 1439/2011 [02:02<00:08, 71.27it/s]Loading weights:  72%|███████▏  | 1450/2011 [02:02<00:08, 69.49it/s]Loading weights:  73%|███████▎  | 1474/2011 [02:02<00:05, 99.43it/s]Loading weights:  74%|███████▍  | 1488/2011 [02:02<00:05, 90.59it/s]Loading weights:  75%|███████▍  | 1500/2011 [02:02<00:05, 94.38it/s]Loading weights:  76%|███████▌  | 1520/2011 [02:02<00:04, 103.29it/s]Loading weights:  76%|███████▌  | 1532/2011 [02:03<00:05, 92.74it/s] Loading weights:  77%|███████▋  | 1556/2011 [02:03<00:03, 118.60it/s]Loading weights:  78%|███████▊  | 1570/2011 [02:03<00:04, 102.61it/s]Loading weights:  79%|███████▊  | 1582/2011 [02:03<00:04, 103.54it/s]Loading weights:  80%|███████▉  | 1603/2011 [02:03<00:03, 114.35it/s]Loading weights:  80%|████████  | 1615/2011 [02:03<00:04, 98.85it/s] Loading weights:  81%|████████▏ | 1638/2011 [02:04<00:03, 101.86it/s]Loading weights:  82%|████████▏ | 1653/2011 [02:04<00:03, 97.66it/s] Loading weights:  83%|████████▎ | 1679/2011 [02:04<00:02, 128.32it/s]Loading weights:  84%|████████▍ | 1694/2011 [02:04<00:02, 112.17it/s]Loading weights:  85%|████████▍ | 1707/2011 [02:04<00:02, 110.85it/s]Loading weights:  86%|████████▌ | 1726/2011 [02:04<00:02, 114.06it/s]Loading weights:  86%|████████▋ | 1738/2011 [02:04<00:02, 99.35it/s] Loading weights:  88%|████████▊ | 1763/2011 [02:05<00:01, 128.47it/s]Loading weights:  88%|████████▊ | 1778/2011 [02:05<00:02, 95.99it/s] Loading weights:  90%|████████▉ | 1802/2011 [02:05<00:01, 122.77it/s]Loading weights:  90%|█████████ | 1818/2011 [02:05<00:01, 96.71it/s] Loading weights:  92%|█████████▏| 1843/2011 [02:05<00:01, 122.31it/s]Loading weights:  92%|█████████▏| 1859/2011 [02:06<00:01, 95.96it/s] Loading weights:  94%|█████████▎| 1884/2011 [02:06<00:01, 122.81it/s]Loading weights:  95%|█████████▍| 1901/2011 [02:06<00:01, 96.14it/s] Loading weights:  96%|█████████▌| 1924/2011 [02:06<00:00, 113.35it/s]Loading weights:  96%|█████████▋| 1939/2011 [02:06<00:00, 104.80it/s]Loading weights:  97%|█████████▋| 1952/2011 [02:06<00:00, 103.09it/s]Loading weights:  98%|█████████▊| 1971/2011 [02:07<00:00, 104.47it/s]Loading weights:  99%|█████████▊| 1983/2011 [02:07<00:00, 93.11it/s] Loading weights: 100%|█████████▉| 2004/2011 [02:07<00:00, 115.43it/s]Loading weights: 100%|██████████| 2011/2011 [02:07<00:00, 15.72it/s] 
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[LLM] 로딩 완료!
+
+🤖 모델 출력:
+Here is the step-by-step solution:
+
+1.  **Determine the total number of eggs laid per day:**
+    Janet's ducks lay 16 eggs per day.
+
+2.  **Determine the number of eggs Janet eats:**
+    She eats three eggs for breakfast every morning.
+    Eggs eaten = 3
+
+3.  **Determine the number of eggs Janet bakes:**
+    She bakes four eggs for her friends every day.
+    Eggs baked = 4
+
+4.  **Calculate the total number of eggs used (eaten or baked):**
+    Total eggs used = Eggs eaten + Eggs baked
+    Total eggs used = $3 + 4 = 7$ eggs.
+
+5.  **Calculate the number of remaining eggs sold:**
+    The remainder is the number of eggs sold.
+    Eggs sold = Total eggs laid - Total eggs used
+    Eggs sold = $16 - 7 = 9$ eggs.
+
+6.  **Calculate the total money made from the sales:**
+    She sells the remainder at the farmers' market for $\$2$ per egg.
+    Money made = Number of eggs sold $\times$ Price per egg
+    Money made = $9 \times \$2 = \$18$.
+
+The amount Janet makes every day at the farmers' market is $\$18$.
+
+ANSWER: 18
+
+------------------------------------------------------------
+
+결과: ✅ 정답!
+============================================================

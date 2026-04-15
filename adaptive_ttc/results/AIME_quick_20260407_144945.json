@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "dataset": "AIME",
+    "mode": "quick",
+    "model": "/data/yejinhong/gemma-4-E2B-it",
+    "max_depth": 2,
+    "max_width": 3,
+    "timestamp": "20260407_144945"
+  },
+  "summary": {
+    "baseline_accuracy": 0.0,
+    "mas_accuracy": 0.0,
+    "diff": 0.0,
+    "winner": "TIE"
+  },
+  "baseline": {
+    "score": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "results": [
+      {
+        "question": "Patrick started walking at a constant rate along a straight road from school to the park. One hour after Patrick left, Tanya started running along the same road from school to the park. One hour after Tanya left, Jose started bicycling along the same road from school to the park. Tanya ran at a constant rate of $2$ miles per hour faster than Patrick walked, Jose bicycled at a constant rate of $7$ miles per hour faster than Tanya ran, and all three arrived at the park at the same time. The distance from the school to the park is $\\frac{m}{n}$ miles, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+        "gold": 277,
+        "predicted": "Let $D$ be the distance from the school to the park in miles.\nLet $r_P$, $r_T$, and $r_J$ be the constant speeds of Patrick, Tanya, and Jose, respectively, in miles per hour (mph).\n\nLet $t_P$, $t_T$, and $t_J$ be the time taken by Patrick, Tanya, and Jose to reach the park, respectively, in hours.\n\nWe are given the following relationships between the speeds:\n1. Tanya ran $2$ mph faster than Patrick walked:\n$$r_T = r_P + 2$$\n2. Jose bicycled $7$ mph faster than Tanya ran:\n$$r_J = r_T + 7 = (r_P + 2) + 7 = r_P + 9$$\n\nNow we determine the time each person spends traveling.\nPatrick starts at time $t=0$.\nTanya starts 1 hour later.\nJose starts 2 hours after Patrick (1 hour after Tanya).\n\nSince all three arrive at the park at the same time, let $T$ be the total time elapsed from when Patrick started until they all arrive.\nPatrick's travel time is $t_P = T$.\nTanya's travel time is $t_T = T - 1$.\nJose's travel time is $t_J = T - 2$.\n\nThe distance covered by each person is given by distance = rate $\\times$ time. Since they all travel the distance $D$:\n1. For Patrick: $D = r_P t_P = r_P T$\n2. For Tanya: $D = r_T t_T = (r_P + 2)(T - 1)$\n3. For Jose: $D = r_J t_J = (r_P + 9)(T - 2)$\n\nFrom equation (1), $r_P = \\frac{D}{T}$. Substitute this into equations (2) and (3).\n\nSubstitute $r_P$ into equation (2):\n$$D = \\left(\\frac{D}{T} + 2\\right)(T - 1)$$\n$$D = \\frac{D}{T}(T - 1) + 2(T - 1)$$\n$$D = D \\left(1 - \\frac",
+        "correct": false
+      },
+      {
+        "question": "Find the number of positive integer palindromes written in base $10$ with no zero digits, and whose digits add up to $13$. For example, $42124$ has these properties. Recall that a palindrome is a number whose representation reads the same from left to right as from right to left.",
+        "gold": 62,
+        "predicted": "Let $N$ be a positive integer palindrome written in base 10 with no zero digits, and whose digits sum up to $13$.\nSince there are no zero digits, the allowed digits are $\\{1, 2, 3, 4, 5, 6, 7, 8, 9\\}$.\n\nLet $L$ be the number of digits of $N$.\nLet the digits of $N$ be $d_1, d_2, \\ldots, d_L$.\nSince $N$ is a palindrome, $d_i = d_{L-i+1}$ for all $1 \\le i \\le L$.\nSince there are no zero digits, $d_i \\in \\{1, 2, \\ldots, 9\\}$ for all $i$.\nThe sum of the digits is $S = \\sum_{i=1}^{L} d_i = 13$.\n\nWe consider cases based on the number of digits $L$.\n\nCase 1: $L=1$.\nThe palindrome is $d_1$. The sum of digits is $d_1 = 13$. This is impossible since $d_1 \\le 9$.\n\nCase 2: $L=2$.\nThe palindrome is $d_1 d_2$. Since it is a palindrome, $d_1 = d_2$.\nThe sum of digits is $d_1 + d_2 = 2d_1 = 13$. This is impossible since 13 is odd.\n\nCase 3: $L=3$.\nThe palindrome is $d_1 d_2 d_1$.\nThe sum of digits is $2d_1 + d_2 = 13$.\nConstraints: $d_1 \\in \\{1, \\ldots, 9\\}$ and $d_2 \\in \\{1, \\ldots, 9\\}$.\nWe iterate over possible values of $d_1$:\nIf $d_1 = 1$, $2(1) + d_2 = 13 \\implies d_2 = 11$. Impossible since $d_2 \\le 9$.\nIf $d_1 = 2$, $2(2) + d_2 = 13 \\implies d_2 = 9$. Possible. Palindrome: $292$. (Digits are non-",
+        "correct": false
+      },
+      {
+        "question": "A hemisphere with radius $200$ sits on top of a horizontal circular disk with radius $200,$ and the hemisphere and disk have the same center. Let $\\mathcal T$ be the region of points P in the disk such that a sphere of radius $42$ can be placed on top of the disk at $P$ and lie completely inside the hemisphere. The area of $\\mathcal T$ divided by the area of the disk is $\\tfrac pq,$ where $p$ and $q$ are relatively prime positive integers. Find $p+q.$",
+        "gold": 79,
+        "predicted": "Let the center of the disk and the hemisphere be the origin $O=(0,0,0)$ in a 3D Cartesian coordinate system.\nThe horizontal circular disk lies in the $xy$-plane, defined by $x^2 + y^2 \\le R^2$, where $R=200$.\nThe hemisphere sits on top of the disk. Since the disk is in the $xy$-plane, the hemisphere occupies the region $x^2 + y^2 + z^2 \\le R^2$ with $z \\ge 0$.\n\nThe disk is the region $D = \\{(x, y, 0) : x^2 + y^2 \\le R^2\\}$. The area of the disk is $A_D = \\pi R^2 = \\pi (200^2) = 40000\\pi$.\n\nLet $r=42$ be the radius of the sphere that can be placed on top of the disk at a point $P=(x, y, 0)$ and lie completely inside the hemisphere.\nThe sphere has its center at $P' = (x, y, r)$ (since it rests on the disk, its center is at height $r$ above the disk, and its projection onto the disk is $P$).\nThe equation of the sphere is $(X-x)^2 + (Y-y)^2 + (Z-r)^2 = r^2$.\n\nFor the sphere to lie completely inside the hemisphere, two conditions must be met:\n1. The sphere must be above or on the disk ($Z \\ge 0$ for all points on the sphere). This is satisfied since the lowest point of the sphere is at $Z=0$.\n2. The sphere must be inside the hemisphere, which means it must satisfy $X^2 + Y^2 + Z^2 \\le R^2$ for all points $(X, Y, Z)$ on the sphere.\n\nThe point on the sphere farthest from the origin $O$ determines the constraint.\nThe distance from the origin $O$ to the center of the sphere $P'=(x, y, r)$ is $d = \\sqrt{x^2 + y^2 + r^2}$.\nThe point on the sphere farthest from the origin $O$ lies on the line connecting $O$ and $P'$, extended away from $O$. The distance",
+        "correct": false
+      }
+    ]
+  },
+  "mas": {
+    "score": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "results": [
+      {
+        "question": "Patrick started walking at a constant rate along a straight road from school to the park. One hour after Patrick left, Tanya started running along the same road from school to the park. One hour after Tanya left, Jose started bicycling along the same road from school to the park. Tanya ran at a constant rate of $2$ miles per hour faster than Patrick walked, Jose bicycled at a constant rate of $7$ miles per hour faster than Tanya ran, and all three arrived at the park at the same time. The distance from the school to the park is $\\frac{m}{n}$ miles, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.",
+        "gold": 277,
+        "predicted": "The provided sub-answers contain conflicting or incomplete derivations, particularly in Sub-answer 1 and Sub-answer 2, which lead to different intermediate results. We must rely on the consistent setup derived in Sub-answer 3, which correctly defines the time relationships based on the starting delays and the total time $T$.\n\nWe use the equations derived in Sub-answer 3:\n1. $D = r_P T$\n2. $D = (r_P + 2)(T - 1)$\n3. $D = (r_P + 9)(T - 2)$\n\nEquating (1) and (2):\n$$r_P T = (r_P + 2)(T - 1)$$\n$$r_P T = r_P T - r_P + 2T - 2$$\n$$0 = -r_P + 2T - 2$$\n$$r_P = 2T - 2 \\quad (*)$$\n\nEquating (1) and (3):\n$$r_P T = (r_P + 9)(T - 2)$$\n$$r_P T = r_P T - 2r_P + 9T - 18$$\n$$0 = -2r_P + 9T - 18$$\n$$2r_P = 9T - 18$$\n$$r_P = \\frac{9T - 18}{2} \\quad (**)$$\n\nNow we equate the expressions for $r_P$ from $(*)$ and $(**)$:\n$$2T - 2 = \\frac{9T - 18}{2}$$\nMultiply by 2:\n$$4T - 4 = 9T - 18$$\n$$18 - 4 = 9T - 4T$$\n$$14 = 5T$$\n$$T = \\frac{14}{5} \\text{ hours}$$\n\nNow we find $r_P$ using $T = 14/5$ in equation $(*)$:\n$$r_P = 2T - 2 = 2\\left(\\frac{14}{5}\\right) - 2 = \\frac{28}{5} - \\frac{10}{5} = \\frac{18}{5} \\text{ mph}$$",
+        "correct": false
+      },
+      {
+        "question": "Find the number of positive integer palindromes written in base $10$ with no zero digits, and whose digits add up to $13$. For example, $42124$ has these properties. Recall that a palindrome is a number whose representation reads the same from left to right as from right to left.",
+        "gold": 62,
+        "predicted": "The main problem asks for the number of positive integer palindromes written in base 10 with no zero digits, and whose digits add up to 13.\n\nWe analyze the possible number of digits $L$.\n\n1. **$L$ is even ($L=2k$):**\nThe sum of digits is $S = 2(d_1 + d_2 + \\ldots + d_k) = 13$. Since the left side is even and the right side is odd, there are no solutions when $L$ is even.\n\n2. **$L$ is odd ($L=2k-1$):**\nThe palindrome has the form $d_1 d_2 \\ldots d_{k-1} d_k d_{k-1} \\ldots d_2 d_1$.\nThe sum of digits is $S = 2(d_1 + d_2 + \\ldots + d_{k-1}) + d_k = 13$.\nThe digits must satisfy $d_i \\in \\{1, 2, \\ldots, 9\\}$ for $i=1, \\ldots, k$.\nThe length $L$ determines $k = (L+1)/2$. Since $d_i \\ge 1$, the minimum sum is $2(k-1) \\cdot 1 + 1 = 2k - 1$.\nWe need $13 \\ge 2k - 1$, so $14 \\ge 2k$, which means $k \\le 7$.\nSince $L = 2k-1$, the maximum length is $L_{\\max} = 2(7) - 1 = 13$.\nThe possible values for $k$ are $1, 2, 3, 4, 5, 6, 7$.\n\nWe count the number of solutions $(d_1, d_2, \\ldots, d_k)$ to $2(d_1 + \\ldots + d_{k-1}) + d_k = 13$, subject to $1 \\le d_i \\le 9$ for all $i=1, \\ldots, k$.\n\nLet $S' = d_1 + d_2 + \\ldots + d_{k-1}$. The equation is $2S' + d_k = 13$.",
+        "correct": false
+      },
+      {
+        "question": "A hemisphere with radius $200$ sits on top of a horizontal circular disk with radius $200,$ and the hemisphere and disk have the same center. Let $\\mathcal T$ be the region of points P in the disk such that a sphere of radius $42$ can be placed on top of the disk at $P$ and lie completely inside the hemisphere. The area of $\\mathcal T$ divided by the area of the disk is $\\tfrac pq,$ where $p$ and $q$ are relatively prime positive integers. Find $p+q.$",
+        "gold": 79,
+        "predicted": "The problem asks for the ratio of the area of region $\\mathcal{T}$ to the area of the disk, where $\\mathcal{T}$ is the set of points $P$ in the disk such that a sphere of radius $r=42$ placed on the disk at $P$ lies completely inside the hemisphere of radius $R=200$.\n\n**1. Setup and Constraints**\nLet $R=200$ and $r=42$. The center of the disk and hemisphere is the origin $O=(0, 0, 0)$.\nA point $P=(x, y, 0)$ is in the disk if $x^2 + y^2 \\le R^2$.\nThe center of the sphere placed at $P$ is $C = (x, y, r) = (x, y, 42)$.\nThe sphere is defined by $(X-x)^2 + (Y-y)^2 + (Z-r)^2 \\le r^2$.\nThe hemisphere is defined by $X^2 + Y^2 + Z^2 \\le R^2$ and $Z \\ge 0$.\n\nFor the sphere to lie completely inside the hemisphere, the point on the sphere farthest from the origin $O$ must satisfy the hemisphere constraint. The point on the sphere farthest from $O$ lies along the line connecting $O$ and $C$.\n\nThe distance from $O$ to the center $C$ is $d(O, C) = \\sqrt{x^2 + y^2 + r^2}$.\nThe maximum distance from $O$ to any point on the sphere is $d(O, C) + r$.\nFor the sphere to be inside the sphere defining the hemisphere, we must have:\n$$d(O, C) + r \\le R$$\n$$\\sqrt{x^2 + y^2 + r^2} + r \\le R$$\n$$\\sqrt{x^2 + y^2 + r^2} \\le R - r$$\n\nSince $R=200$ and $r=42$, $R-r = 200 - 42 = 158$.\nThe condition becomes:\n$$\\sqrt{x^2 + y^2 + 42^2} \\le 158$$\nSquaring both sides:\n$$x^2 +",
+        "correct": false
+      }
+    ]
+  }
+}
